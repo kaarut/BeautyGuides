@@ -1,0 +1,122 @@
+---
+import Layout from '../layouts/Layout.astro';
+import ArticleCard from '../components/ArticleCard.astro';
+
+const featuredArticles = [
+  {
+    title: "Best Hair Extensions for Your Wedding Day",
+    description: "Find the perfect hair extensions to make your special day even more magical. We review the top options for every hair type and style.",
+    image: "https://images.unsplash.com/photo-1594744803329-e58b31de8bf5?auto=format&fit=crop&q=80",
+    url: "/reviews/best-wedding-hair-extensions",
+    date: "2024-04-15",
+    category: "Reviews"
+  },
+  {
+    title: "How to Choose the Perfect Hair Extension Color",
+    description: "A comprehensive guide to matching and selecting the right hair extension color for a natural, seamless look.",
+    image: "https://images.unsplash.com/photo-1605980776566-0486c3ac7617?auto=format&fit=crop&q=80",
+    url: "/guides/choosing-hair-extension-color",
+    date: "2024-04-12",
+    category: "Guides"
+  },
+  {
+    title: "Top 10 Luxury Hair Salons in New York",
+    description: "Discover the most exclusive and highly-rated hair salons in NYC, featuring expert stylists and premium services.",
+    image: "https://images.unsplash.com/photo-1560066984-138dadb4c035?auto=format&fit=crop&q=80",
+    url: "/reviews/best-nyc-hair-salons",
+    date: "2024-04-10",
+    category: "Reviews"
+  }
+];
+
+const guides = [
+  {
+    title: "Complete Guide to Hair Extension Types",
+    description: "Learn about clip-ins, tape-ins, sew-ins, and more. Find out which type suits your lifestyle and hair goals.",
+    image: "https://images.unsplash.com/photo-1522336572468-97b06e8ef143?auto=format&fit=crop&q=80",
+    url: "/guides/hair-extension-types",
+    date: "2024-04-08",
+    category: "Guides"
+  },
+  {
+    title: "Hair Extension Care and Maintenance",
+    description: "Expert tips on maintaining your hair extensions, from washing to styling, to ensure they last longer and look better.",
+    image: "https://images.unsplash.com/photo-1527799820374-dcf8d9d4a388?auto=format&fit=crop&q=80",
+    url: "/guides/extension-care",
+    date: "2024-04-05",
+    category: "Guides"
+  }
+];
+---
+
+<Layout 
+  title="Expert Beauty Reviews & Guides"
+  description="Your trusted source for expert beauty reviews, hair extension guides, and professional beauty advice. Discover top products and treatments for your beauty journey."
+>
+  <main>
+    <section class="relative bg-gray-800 text-white">
+      <div class="absolute inset-0">
+        <img 
+          src="https://images.unsplash.com/photo-1562322140-8baeececf3df?auto=format&fit=crop&q=80" 
+          alt="Beauty background"
+          class="w-full h-full object-cover opacity-20"
+        />
+      </div>
+      <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-32">
+        <h1 class="text-5xl md:text-6xl font-bold font-playfair mb-6 animate-fade-in">
+          Your Guide to Beauty Excellence
+        </h1>
+        <p class="text-xl md:text-2xl max-w-2xl mb-8 animate-fade-in text-gray-300" style="animation-delay: 0.2s">
+          Expert reviews, honest recommendations, and professional insights for your beauty journey.
+        </p>
+        <a 
+          href="#featured-reviews" 
+          class="inline-block bg-pink-600 text-white px-8 py-3 rounded-full font-medium hover:bg-pink-700 transition animate-fade-in"
+          style="animation-delay: 0.4s"
+        >
+          Explore Reviews
+        </a>
+      </div>
+    </section>
+
+    <section id="featured-reviews" class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
+      <h2 class="text-3xl font-bold font-playfair text-white mb-12 text-center">Featured Reviews</h2>
+      <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+        {featuredArticles.map(article => (
+          <ArticleCard {...article} />
+        ))}
+      </div>
+    </section>
+
+    <section id="guides" class="bg-gray-800/50 py-20">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <h2 class="text-3xl font-bold font-playfair text-white mb-12 text-center">Expert Guides</h2>
+        <div class="grid md:grid-cols-2 gap-8">
+          {guides.map(guide => (
+            <ArticleCard {...guide} />
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <section id="about" class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
+      <div class="bg-gray-800 rounded-2xl p-8 md:p-12">
+        <h2 class="text-3xl font-bold font-playfair text-white mb-6">About Beauty Guides</h2>
+        <div class="prose prose-invert max-w-none">
+          <p class="text-lg text-gray-300">Welcome to Beauty Guides, your trusted source for expert beauty reviews and comprehensive guides. Our team of beauty professionals and industry experts is dedicated to providing you with honest, detailed reviews and practical advice to help you make informed decisions about your beauty investments.</p>
+          
+          <h3 class="text-xl font-bold text-white mt-8 mb-4">Our Commitment</h3>
+          <ul class="space-y-4 text-gray-300">
+            <li>✓ Thorough testing of all reviewed products</li>
+            <li>✓ Unbiased, honest reviews</li>
+            <li>✓ Expert insights from industry professionals</li>
+            <li>✓ Regular updates with the latest trends and products</li>
+          </ul>
+          
+          <h3 class="text-xl font-bold text-white mt-8 mb-4">Our Expertise</h3>
+          <p class="text-gray-300">With over a decade of experience in the beauty industry, our team has worked with leading brands, professional stylists, and countless clients. We understand the importance of finding the right beauty products and treatments, and we're here to guide you through your beauty journey.</p>
+        </div>
+      </div>
+    </section>
+  </main>
+</Layout>
